@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Dua Collection — Ahmed Gaziyani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F9F8F5;--c:#FFF;--sub:#F3EFE7;--acc:#E8EFEA;--t:#1C2127;--m:#55616D;--s:#85929F;--b:#E3DED3;
+  --p:#1B4D3E;--pl:#256B56;--g:#B8860B;--gb:#FAF3E3;
+  --bf:'Plus Jakarta Sans',sans-serif;--sf:'Playfair Display',serif;
+  --af-scheherazade:'Scheherazade New','Traditional Arabic',serif;
+  --af-noto:'Noto Naskh Arabic','Traditional Arabic',serif;
+  --af-amiri:'Amiri','Traditional Arabic',serif;
+  --cur-af:var(--af-scheherazade);
+  --r:16px;--sh:0 2px 12px rgba(0,0,0,0.04);
+  --as:33px;--ar-weight:700;--ar-color:#0A0F0D;--ar-box-bg:#FAF7F0;--ar-box-b:#DCD5C6
+}
+[data-theme="dark"]{
+  --bg:#0F1412;--c:#161D1A;--sub:#1C2621;--acc:#1D332A;--t:#EEF2EF;--m:#9CAD9F;--s:#6D7D72;--b:#26332C;
+  --p:#3AA07B;--pl:#4DB68E;--g:#D4AF37;--gb:#242217;--sh:0 4px 20px rgba(0,0,0,0.35);
+  --ar-color:#F7FAF8;--ar-box-bg:#121A16;--ar-box-b:#27372F
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--bf);background:var(--bg);color:var(--t);line-height:1.6;padding-bottom:70px;transition:background .2s,color .2s}
+.container{max-width:880px;margin:0 auto;padding:0 18px}
+header{padding:38px 0 16px;text-align:center}
+.bismillah{font-family:var(--cur-af);font-size:30px;font-weight:700;color:var(--p);direction:rtl;margin-bottom:8px;line-height:1.8}
+.title{font-family:var(--sf);font-size:34px;font-weight:600;margin-bottom:6px;letter-spacing:-.5px}
+.sub{font-size:14.5px;color:var(--m);max-width:540px;margin:0 auto 12px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;background:var(--sub);border:1px solid var(--b);border-radius:20px;font-size:12.5px;font-weight:500;color:var(--p)}
+.tb{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 16px;background:var(--c);padding:10px 14px;border-radius:14px;border:1px solid var(--b);box-shadow:var(--sh)}
+.sb{flex:1;min-width:200px;position:relative}
+.sb input{width:100%;padding:8px 12px 8px 32px;border-radius:8px;border:1px solid var(--b);background:var(--bg);color:var(--t);font-size:13.5px;outline:none}
+.sb input:focus{border-color:var(--p)}
+.sb span{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--s);font-size:13px}
+.bg{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:4px;padding:7px 12px;border-radius:8px;border:1px solid var(--b);background:var(--c);color:var(--t);font-size:12.5px;font-weight:500;cursor:pointer;user-select:none;transition:.2s}
+.btn:hover{background:var(--sub)}
+.btn.act,.btn-p{background:var(--p);color:#fff;border-color:var(--p)}
+.btn-p:hover{background:var(--pl)}
+.btn-g{background:var(--gb);color:var(--g);border-color:rgba(184,134,11,.3)}
+.btn-sm{padding:5px 9px;font-size:12px}
+.font-sel{padding:5px 8px;border-radius:8px;border:1px solid var(--b);background:var(--c);color:var(--t);font-size:12px;font-weight:500;outline:none;cursor:pointer}
+.f-sc{overflow-x:auto;padding-bottom:6px;margin-bottom:20px;scrollbar-width:none}
+.f-sc::-webkit-scrollbar{display:none}
+.flts{display:flex;gap:7px;min-width:max-content}
+.pil{padding:5px 13px;border-radius:20px;font-size:12.5px;font-weight:500;background:var(--c);border:1px solid var(--b);color:var(--m);cursor:pointer}
+.pil:hover{color:var(--t)}
+.pil.act{background:var(--p);color:#fff;border-color:var(--p)}
+.d-list{display:flex;flex-direction:column;gap:22px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:var(--r);padding:26px;box-shadow:var(--sh);position:relative;transition:.2s}
+.card:hover{{border-color:rgba(27,77,62,.25)}}
+.c-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px}
+.c-meta{display:flex;align-items:center;gap:8px}
+.c-num{width:26px;height:26px;border-radius:50%;background:var(--acc);color:var(--p);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.c-cat{font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--m)}
+.c-acts{display:flex;align-items:center;gap:4px}
+.ib{background:none;border:none;color:var(--s);width:30px;height:30px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px}
+.ib:hover{background:var(--sub);color:var(--t)}
+.ib.st{color:var(--g)}
+.c-tit{font-family:var(--sf);font-size:21px;font-weight:600;margin-bottom:15px;line-height:1.35}
+
+/* High-Clarity Arabic Container */
+.ar-box{
+  background:var(--ar-box-bg);
+  border:1.5px solid var(--ar-box-b);
+  border-radius:14px;
+  padding:24px 22px;
+  margin-bottom:16px;
+  text-align:right;
+  direction:rtl;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.02)
+}
+.ar-txt{
+  font-family:var(--cur-af);
+  font-size:var(--as);
+  font-weight:var(--ar-weight);
+  line-height:2.4;
+  color:var(--ar-color);
+  word-spacing:4px;
+  letter-spacing:0;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  white-space:pre-line
+}
+
+.tl-box{margin-bottom:13px;font-size:14px;font-style:italic;color:var(--m);line-height:1.6;padding-left:11px;border-left:2.5px solid var(--p)}
+.tr-box{margin-bottom:13px;font-size:14.5px;line-height:1.6}
+.c-bot{margin-top:15px;padding-top:13px;border-top:1px dashed var(--b);display:flex;flex-direction:column;gap:8px;font-size:13px}
+.c-ref{display:inline-flex;align-items:center;gap:5px;color:var(--p);font-weight:600;font-size:12px}
+.c-ctx{color:var(--m);background:var(--bg);padding:8px 12px;border-radius:8px;line-height:1.5;white-space:pre-line;border:1px solid var(--b)}
+.c-tls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:15px}
+.cnt-w{display:inline-flex;align-items:center;gap:7px;background:var(--sub);padding:3px 9px;border-radius:18px;border:1px solid var(--b)}
+.cb{background:var(--p);color:#fff;border:none;border-radius:50%;width:24px;height:24px;cursor:pointer;font-weight:700}
+.cb:hover{background:var(--pl)}
+.cv{font-size:12.5px;font-weight:600;min-width:38px;text-align:center}
+.cr{background:none;border:none;color:var(--s);cursor:pointer;font-size:11px}
+.adm-bar{display:none;background:var(--gb);border:1px solid rgba(184,134,11,.3);border-radius:11px;padding:10px 16px;margin-bottom:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.adm-bar.on{display:flex}
+.e-acts{display:none;gap:4px}
+.edit-on .e-acts{display:flex}
+.m-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(3px);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.m-bg.on{display:flex}
+.modal{background:var(--c);border:1px solid var(--b);border-radius:16px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:13px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fl{font-size:12px;font-weight:600;text-transform:uppercase;color:var(--m)}
+.fi,.ft,.fs{width:100%;padding:8px 11px;border-radius:7px;border:1px solid var(--b);background:var(--bg);color:var(--t);font-size:13.5px;outline:none}
+.fi:focus,.ft:focus,.fs:focus{border-color:var(--p);background:var(--c)}
+.ft.ar{font-family:var(--cur-af);font-size:22px;direction:rtl;line-height:2}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--t);color:var(--bg);padding:8px 18px;border-radius:24px;font-size:13px;font-weight:500;z-index:2000;opacity:0;transition:.25s}
+.toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+.f-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:900;overflow-y:auto;padding:24px 16px}
+.f-bg.on{display:block}
+footer{margin-top:50px;text-align:center;font-size:12.5px;color:var(--s);border-top:1px solid var(--b);padding-top:24px}
+@media(max-width:600px){header{padding:26px 0 12px}.title{font-size:27px}.card{padding:18px}.ar-txt{font-size:26px;line-height:2.2}.tb{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+<h1 class="title">Daily Dua Collection</h1>
+<p class="sub">Supplications for studies, work, confidence, and peace of heart.</p>
+<div class="badge">Collated by Ahmed Gaziyani</div>
+</header>
+
+<div class="tb">
+<div class="sb">
+<span>🔍</span>
+<input type="text" id="q" placeholder="Search Duas, meanings, Surahs...">
+</div>
+<div class="bg">
+<select id="selFont" class="font-sel" title="Choose Arabic Script Style">
+<option value="scheherazade">📖 Naskh (Mushaf)</option>
+<option value="noto">🖋️ Modern Naskh</option>
+<option value="amiri">📜 Classic Amiri</option>
+</select>
+<button class="btn btn-sm" id="bFDec" title="Smaller font">A-</button>
+<button class="btn btn-sm" id="bFInc" title="Larger font">A+</button>
+<button class="btn btn-sm" id="bFocus">Recite</button>
+<button class="btn btn-sm" id="bThm"><span id="tIco">🌙</span></button>
+<button class="btn btn-sm btn-g" id="bEdM">✏️ Manage</button>
+</div>
+</div>
+
+<div class="adm-bar" id="aBar">
+<span style="font-size:13px;font-weight:600;color:var(--g)">Content Manager: Edit, Add, or Download HTML</span>
+<div class="bg">
+<button class="btn btn-sm btn-p" id="bAdd">+ Add Dua</button>
+<button class="btn btn-sm" id="bExp">Export JSON</button>
+<button class="btn btn-sm" id="bImp">Import JSON</button>
+<button class="btn btn-sm btn-g" id="bDl">💾 Download Webpage</button>
+<button class="btn btn-sm" id="bRst">Reset</button>
+</div>
+</div>
+
+<div class="f-sc">
+<div class="flts" id="cFilt">
+<button class="pil act" data-c="all">All (<span id="cAll">9</span>)</button>
+<button class="pil" data-c="Work & Studies">Work & Studies</button>
+<button class="pil" data-c="Confidence & Speech">Confidence & Speech</button>
+<button class="pil" data-c="Ease & Provision">Ease & Provision</button>
+<button class="pil" data-c="Heart & Peace">Heart & Peace</button>
+<button class="pil" data-c="Praise & Remembrance">Remembrance</button>
+<button class="pil" data-c="Needs & Purpose">Needs</button>
+<button class="pil" data-c="starred">⭐ Starred (<span id="cSt">0</span>)</button>
+</div>
+</div>
+
+<div class="d-list" id="lst"></div>
+<div id="noM" style="display:none;text-align:center;padding:50px 20px;color:var(--m)">No Duas found matching your search.</div>
+
+<footer>
+<p>Dua Collection for Work & Studies · Collated by Ahmed Gaziyani</p>
+<p style="margin-top:4px">All modifications stay safely saved in your browser storage.</p>
+</footer>
+</div>
+
+<div class="f-bg" id="fBg">
+<div style="max-width:760px;margin:0 auto">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+<button class="btn btn-sm" id="bClsF">✕ Exit</button>
+<div id="fNum" style="font-weight:600;font-size:13.5px"></div>
+<div class="bg">
+<button class="btn btn-sm" id="bPrv">← Prev</button>
+<button class="btn btn-sm" id="bNxt">Next →</button>
+</div>
+</div>
+<div id="fCrd"></div>
+</div>
+</div>
+
+<div class="m-bg" id="mBg">
+<div class="modal">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<h3 id="mT" style="font-family:var(--sf);font-size:20px">Edit Dua</h3>
+<button class="ib" id="mCls">✕</button>
+</div>
+<form id="dF">
+<input type="hidden" id="fId">
+<div class="fg"><label class="fl">Title / Purpose</label><input type="text" id="fT" class="fi" required></div>
+<div class="fg"><label class="fl">Category</label>
+<select id="fC" class="fs">
+<option value="Work & Studies">Work & Studies</option>
+<option value="Confidence & Speech">Confidence & Speech</option>
+<option value="Ease & Provision">Ease & Provision</option>
+<option value="Heart & Peace">Heart & Peace</option>
+<option value="Praise & Remembrance">Praise & Remembrance</option>
+<option value="Needs & Purpose">Needs & Purpose</option>
+<option value="General">General</option>
+</select></div>
+<div class="fg"><label class="fl">Arabic Text (with Tashkeel)</label><textarea id="fA" class="ft ar" rows="3" required></textarea></div>
+<div class="fg"><label class="fl">Transliteration</label><textarea id="fTl" class="ft" rows="2"></textarea></div>
+<div class="fg"><label class="fl">English Translation</label><textarea id="fTr" class="ft" rows="3" required></textarea></div>
+<div class="fg"><label class="fl">Reference (Surah / Hadith)</label><input type="text" id="fR" class="fi"></div>
+<div class="fg"><label class="fl">Context / Instructions</label><textarea id="fX" class="ft" rows="3"></textarea></div>
+<div class="fg"><label class="fl">Target Count</label><input type="number" id="fK" class="fi" value="1" min="1"></div>
+<div style="display:flex;justify-content:flex-end;gap:8px;margin-top:6px">
+<button type="button" class="btn" id="mCnc">Cancel</button>
+<button type="submit" class="btn btn-p">Save Dua</button>
+</div>
+</form>
+</div>
+</div>
+
+<input type="file" id="fImp" accept=".json" style="display:none">
+<div class="toast" id="tst"><span id="tM"></span></div>
+
+<script>
+const DEFAULT_DUAS = [{"id":1,"title":"Dua for Confidence and Clarity in Speech","category":"Confidence & Speech","arabic":"رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي ۝ وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي ۝ يَفْقَهُوا قَوْلِي","transliteration":"Rabb-ishrah li sadri, wa yassir li 'amri, Wah-lul 'uqdatam-min-li-saani, Yaf-qahuu qawlii","translation":"O my Lord! Open for me my chest (grant me self-confidence, contentment, and boldness); Ease my task for me; And remove the impediment from my speech, so they may understand what I say.","reference":"Surah Ta-Ha [20:25-28]","context":"A du'a that Sayyidina Musa (alayhis salam) made when proceeding to the court of Fir'awn (Pharaoh) for the arguments (inviting him to Islam).","counterTarget":1},{"id":2,"title":"Du'a for Provision and Divine Help","category":"Ease & Provision","arabic":"رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ","transliteration":"Rabbi 'inni limaa 'anzalta 'ilayya min khairin-faqeer","translation":"O my Lord! I am indeed needy of whatever good You may send to me.","reference":"Surah Al-Qasas [28:24]","context":"The above du'a was made whilst Sayyidina Musa (alayhis salam) was traveling to the desert of Madyan, with no place of shelter. He made this du'a while resting under the shade of a tree.","counterTarget":1},{"id":3,"title":"Du'a for Beneficial Knowledge & Sustenance","category":"Work & Studies","arabic":"اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا ، وَرِزْقًا طَيِّبًا ، وَعَمَلًا مُتَقَبَّلًا","transliteration":"Allahumma inni as'aluka 'Ilman naafi'an, wa rizqan tayyiban, wa 'amalan mutaqabbalan","translation":"O Allah! I ask You for knowledge that is of benefit, a good provision and deeds that will be accepted.","reference":"Sunan Ibn Majah (Hadith 925)","context":"Recommended morning supplication for students, professionals, and seekers of fruitful knowledge, lawful livelihood, and accepted actions.","counterTarget":1},{"id":4,"title":"Du'a for Useful Knowledge and Continuous Learning","category":"Work & Studies","arabic":"اللَّهُمَّ انْفَعْنِي بِمَا عَلَّمْتَنِي ، وَعَلِّمْنِي مَا يَنْفَعُنِي","transliteration":"Allahumma infa'nii bimaa 'allamtanii wa'allimnii maa yanfa'unii","translation":"O Allah! Make useful for me what You taught me and teach me knowledge that will be useful to me.","reference":"Jami` at-Tirmidhi (3599) & Sunan Ibn Majah (251)","context":"A foundational prayer for students and scholars so that gained knowledge translates into virtue and practical benefit.","counterTarget":1},{"id":5,"title":"Du'a for Ease in Difficult Matters","category":"Ease & Provision","arabic":"اللَّهُمَّ الْطُفْ بِي فِي تَيْسِيرِ كُلِّ عَسِيرٍ ، فَإِنَّ تَيْسِيرَ كُلِّ عَسِيرٍ عَلَيْكَ يَسِيرٌ","transliteration":"Allahumma Oltuf bi fi taysiri kulli 'aseer, fa'inna taysira kulli 'aseerin 'alayka yaseer","translation":"O Allah! Make easy for me every difficult thing, with Your special favor and Kindness, for it is easy for You to make every difficult thing easy.","reference":"Traditional Supplication for Relief","context":"Seeking Allah's divine grace (Lutf) when confronting arduous exams, challenging work projects, or burdensome tasks.","counterTarget":1},{"id":6,"title":"Du'a for Uneasiness, Stress & Anxiety in the Heart","category":"Heart & Peace","arabic":"الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُمْ بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ","transliteration":"Allatheena aamanoo wa tatma'innu quloobuhum bithikril-laah, 'alaa bithikril-laahi tatma'innul-quloob","translation":"Those who believe and whose hearts find rest in the remembrance of Allah. Verily, in the remembrance of Allah do hearts find rest.","reference":"Surah Ar-Ra'd [13:28]","context":"اگر کسی کے دل میں گھبراہٹ ہو تو اس آیت کو ۳ مرتبہ پڑھ کر سینہ پر دم کرے ان شاء اللہ آرام مل جائے گا۔\n(Instruction: If feeling anxiety or restlessness in the chest, recite this Ayat 3 times and blow over the chest. Insha'Allah, tranquility will follow.)","counterTarget":3},{"id":7,"title":"Kalimat of Sayyidina Ghaus-e-Azam (R.A.)","category":"Praise & Remembrance","arabic":"يَا بَاقِي أَنْتَ الْبَاقِي ، لَيْسَ الْبَاقِي إِلَّا اللَّهُ","transliteration":"Ya Baqi Antal Baqi Laisal Baqi Illallah","translation":"O Everlasting! You are the Everlasting; there is no lasting except Allah.","reference":"Sayyidina Ghaus-e-Azam Sheikh Abdul Qadir Jilani (R.A.)","context":"Sayyidna Ghaus-e-Azam farmate hain: 'Mujhe jo kuch mila, in jumlo se mila.' (Whatever spiritual elevation and blessings were bestowed upon me, came through these words.)","counterTarget":10},{"id":8,"title":"Kalimat for Overcoming Hardship & Deliverance","category":"Ease & Provision","arabic":"اللَّهُ كَافِي ، قَصَدْتُ الْكَافِي\nوَجَدْتُ الْكَافِي لِكُلِّ كَافِي\nكَفَانِي الْكَافِي وَلِلَّهِ الْحَمْدُ","transliteration":"Allahu Kaafi, Qasad-tul Kaafi, Wajad-tul Kaafi li-kulli Kaafi, Kafa-niyal Kaafi, wa lillahil Hamd","translation":"Allah is the Sufficient. I aimed for the Sufficient, I found the Sufficient enough for everything. The Sufficient sufficed me, and all praise is due to Allah.","reference":"Sayyidina Ghaus-e-Azam Sheikh Abdul Qadir Jilani (R.A.)","context":"Sayyidna Ghaus-e-Azam farmate hain: Koi bhi mamla jo mushkil ka ho, usse jo najat hasil ki hai aur mushkil door hui hai in kalimat se. Kasrat se padhein. (Recite abundantly during difficult trials for swift resolution.)","counterTarget":7},{"id":9,"title":"Du'a for Fulfillment of Purpose and Needs","category":"Needs & Purpose","arabic":"يَا بَدِيعَ الْعَجَائِبِ بِالْخَيْرِ يَا بَدِيعُ","transliteration":"Ya Badee' al-'Ajaa'ibi Bil Khayri, Ya Badee'u","translation":"O Unique Originator of wonders in goodness, O Originator!","reference":"Mujarrab (Tried & Tested Supplication)","context":"Koi Maqsad Hasil Karna Ho Tou Ye Padhein. While not directly from Quran or Hadith, it is a tried and tested (Mujarrab) supplication handed down by pious predecessors for the fulfillment of important goals and needs.","counterTarget":11}];
+let duas=[], star=new Set(), cnts={}, selC='all', srch='', isEd=false, fi=0, arZ=33, selFnt='scheherazade';
+const SK='duas_db_v2', STK='duas_st_v2', CK='duas_cnt_v2', TK='duas_th_v2', FK='duas_fs_v2', FONT_KEY='duas_font_v2';
+const $=i=>document.getElementById(i);
+
+function init(){
+  try{duas=JSON.parse(localStorage.getItem(SK))||[...DEFAULT_DUAS]}catch(e){duas=[...DEFAULT_DUAS]}
+  try{star=new Set(JSON.parse(localStorage.getItem(STK))||[])}catch(e){}
+  try{cnts=JSON.parse(localStorage.getItem(CK))||{}}catch(e){}
+  setThm(localStorage.getItem(TK)||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+  const fs=localStorage.getItem(FK);if(fs){arZ=parseInt(fs);document.documentElement.style.setProperty('--as',arZ+'px')}
+  const sf=localStorage.getItem(FONT_KEY)||'scheherazade';
+  applyFont(sf);$('selFont').value=sf;
+  bind();render();
+}
+
+function applyFont(f){
+  selFnt=f;
+  if(f==='noto') document.documentElement.style.setProperty('--cur-af','var(--af-noto)');
+  else if(f==='amiri') document.documentElement.style.setProperty('--cur-af','var(--af-amiri)');
+  else document.documentElement.style.setProperty('--cur-af','var(--af-scheherazade)');
+  localStorage.setItem(FONT_KEY,f);
+}
+
+function save(){
+  localStorage.setItem(SK,JSON.stringify(duas));
+  localStorage.setItem(STK,JSON.stringify([...star]));
+  localStorage.setItem(CK,JSON.stringify(cnts));
+  $('cAll').textContent=duas.length;
+  $('cSt').textContent=star.size;
+}
+
+function toast(m){$('tM').textContent=m;$('tst').classList.add('on');setTimeout(()=>$('tst').classList.remove('on'),2200)}
+function setThm(t){
+  if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');$('tIco').textContent='☀️'}
+  else{document.documentElement.removeAttribute('data-theme');$('tIco').textContent='🌙'}
+  localStorage.setItem(TK,t);
+}
+
+function bind(){
+  $('selFont').onchange=e=>{applyFont(e.target.value);toast('Arabic font updated');render()};
+  $('bThm').onclick=()=>setThm(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+  $('bFInc').onclick=()=>{if(arZ<52){arZ+=2;document.documentElement.style.setProperty('--as',arZ+'px');localStorage.setItem(FK,arZ)}};
+  $('bFDec').onclick=()=>{if(arZ>20){arZ-=2;document.documentElement.style.setProperty('--as',arZ+'px');localStorage.setItem(FK,arZ)}};
+  $('q').oninput=e=>{srch=e.target.value.toLowerCase().trim();render()};
+  $('cFilt').onclick=e=>{
+    const p=e.target.closest('.pil');if(!p)return;
+    document.querySelectorAll('.pil').forEach(x=>x.classList.remove('act'));
+    p.classList.add('act');selC=p.dataset.c;render();
+  };
+  $('bEdM').onclick=()=>{
+    isEd=!isEd;
+    $('aBar').classList.toggle('on',isEd);
+    document.body.classList.toggle('edit-on',isEd);
+    $('bEdM').classList.toggle('act',isEd);
+    $('bEdM').innerHTML=isEd?'✓ Exit':'✏️ Manage';
+    toast(isEd?'Edit mode enabled':'Edit mode exited');
+    render();
+  };
+  $('bAdd').onclick=()=>openM();
+  $('mCls').onclick=$('mCnc').onclick=closeM;
+  $('dF').onsubmit=hSave;
+  $('bFocus').onclick=openFoc;
+  $('bClsF').onclick=closeFoc;
+  $('bPrv').onclick=()=>{if(fi>0){fi--;renFoc()}};
+  $('bNxt').onclick=()=>{const fl=getFltr();if(fi<fl.length-1){fi++;renFoc()}};
+  $('bExp').onclick=()=>{
+    const b=new Blob([JSON.stringify(duas,null,2)],{type:'application/json'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='duas.json';a.click();toast('Exported JSON');
+  };
+  $('bImp').onclick=()=>$('fImp').click();
+  $('fImp').onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(Array.isArray(d)){duas=d;save();render();toast('Imported '+d.length+' Duas')}}catch(err){alert('Invalid JSON')}};
+    r.readAsText(f);$('fImp').value='';
+  };
+  $('bDl').onclick=dlHtml;
+  $('bRst').onclick=()=>{
+    if(confirm('Reset all Duas back to Ahmed Gaziyani original collection?')){
+      duas=JSON.parse(JSON.stringify(DEFAULT_DUAS));save();render();toast('Reset to default');
+    }
+  };
+}
+
+function getFltr(){
+  return duas.filter(d=>{
+    if(selC==='starred'&&!star.has(d.id))return false;
+    if(selC!=='all'&&selC!=='starred'&&d.category!==selC)return false;
+    if(srch){
+      const h=[d.title,d.arabic,d.transliteration,d.translation,d.reference,d.context,d.category].join(' ').toLowerCase();
+      if(!h.includes(srch))return false;
+    }
+    return true;
+  });
+}
+
+function render(){
+  save();
+  const list=getFltr();
+  if(!list.length){$('lst').innerHTML='';$('noM').style.display='block';return}
+  $('noM').style.display='none';
+  $('lst').innerHTML=list.map(d=>{
+    const isSt=star.has(d.id), c=cnts[d.id]||0, tgt=d.counterTarget||1;
+    return `<article class="card">
+      <div class="c-top">
+        <div class="c-meta">
+          <span class="c-num">${d.id}</span>
+          <span class="c-cat">${esc(d.category||'General')}</span>
+        </div>
+        <div class="c-acts">
+          <button class="ib ${isSt?'st':''}" onclick="togSt(${d.id})">${isSt?'★':'☆'}</button>
+          <button class="ib" onclick="cpD(${d.id})" title="Copy">📋</button>
+          <div class="e-acts">
+            <button class="btn btn-sm" onclick="edD(${d.id})">Edit</button>
+            <button class="btn btn-sm" style="color:#d9534f" onclick="delD(${d.id})">Del</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="c-tit">${esc(d.title)}</h2>
+      <div class="ar-box"><div class="ar-txt">${esc(d.arabic)}</div></div>
+      ${d.transliteration?`<div class="tl-box">${esc(d.transliteration)}</div>`:''}
+      <div class="tr-box">${esc(d.translation)}</div>
+      <div class="c-bot">
+        ${d.reference?`<div class="c-ref">📖 ${esc(d.reference)}</div>`:''}
+        ${d.context?`<div class="c-ctx">${esc(d.context)}</div>`:''}
+      </div>
+      <div class="c-tls">
+        <div class="cnt-w">
+          <button class="cb" onclick="incC(${d.id})">+</button>
+          <span class="cv" id="cv-${d.id}">${c} / ${tgt}</span>
+          <button class="cr" onclick="rstC(${d.id})">↺</button>
+        </div>
+        <span style="font-size:12px;color:var(--s)">${tgt>1?`Recite ${tgt}x`:'Daily recitation'}</span>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+window.incC=id=>{cnts[id]=(cnts[id]||0)+1;save();const el=$('cv-'+id);const t=(duas.find(d=>d.id===id)||{}).counterTarget||1;if(el)el.textContent=cnts[id]+' / '+t;if(cnts[id]===t)toast('Target completed! May Allah accept.')};
+window.rstC=id=>{cnts[id]=0;save();const el=$('cv-'+id);const t=(duas.find(d=>d.id===id)||{}).counterTarget||1;if(el)el.textContent='0 / '+t};
+window.togSt=id=>{if(star.has(id)){star.delete(id);toast('Removed favorite')}else{star.add(id);toast('Starred ⭐')}save();render()};
+window.cpD=id=>{
+  const d=duas.find(x=>x.id===id);if(!d)return;
+  navigator.clipboard.writeText(`${d.title}\n\n${d.arabic}\n\n${d.transliteration||''}}\n\n${d.translation}\n\n${d.reference||''}`).then(()=>toast('Copied to clipboard'));
+};
+
+function openM(d=null){
+  $('mBg').classList.add('on');
+  if(d){
+    $('mT').textContent='Edit Dua #'+d.id;
+    $('fId').value=d.id;$('fT').value=d.title;$('fC').value=d.category||'General';
+    $('fA').value=d.arabic;$('fTl').value=d.transliteration||'';$('fTr').value=d.translation;
+    $('fR').value=d.reference||'';$('fX').value=d.context||'';$('fK').value=d.counterTarget||1;
+  }else{
+    $('mT').textContent='Add New Dua';$('dF').reset();$('fId').value='';$('fK').value=1;
+  }
+}
+function closeM(){$('mBg').classList.remove('on')}
+window.edD=id=>{const d=duas.find(x=>x.id===id);if(d)openM(d)};
+window.delD=id=>{if(confirm('Delete this Dua?')){duas=duas.filter(x=>x.id!==id);star.delete(id);delete cnts[id];save();render();toast('Dua deleted')}};
+
+function hSave(e){
+  e.preventDefault();
+  const idVal=$('fId').value, t=$('fT').value.trim(), catVal=$('fC').value, ar=$('fA').value.trim(),
+        tl=$('fTl').value.trim(), tr=$('fTr').value.trim(), ref=$('fR').value.trim(), ctx=$('fX').value.trim(),
+        tgt=parseInt($('fK').value)||1;
+  if(idVal){
+    const target=parseInt(idVal), idx=duas.findIndex(x=>x.id===target);
+    if(idx!==-1){duas[idx]={...duas[idx],title:t,category:catVal,arabic:ar,transliteration:tl,translation:tr,reference:ref,context:ctx,counterTarget:tgt};toast('Dua updated')}
+  }else{
+    const newId=duas.length?Math.max(...duas.map(x=>x.id))+1:1;
+    duas.push({id:newId,title:t,category:catVal,arabic:ar,transliteration:tl,translation:tr,reference:ref,context:ctx,counterTarget:tgt});
+    toast('New Dua added!');
+  }
+  save();closeM();render();
+}
+
+function openFoc(){
+  const list=getFltr();if(!list.length)return alert('No Duas match filter');
+  fi=0;$('fBg').classList.add('on');renFoc();
+}
+function closeFoc(){$('fBg').classList.remove('on')}
+function renFoc(){
+  const list=getFltr();if(!list.length)return;
+  const d=list[fi];$('fNum').textContent=`${fi+1} of ${list.length}`;
+  $('bPrv').disabled=fi===0;$('bNxt').disabled=fi===list.length-1;
+  $('fCrd').innerHTML=`<article class="card">
+    <div class="c-top"><div class="c-meta"><span class="c-num">${d.id}</span><span class="c-cat">${esc(d.category||'General')}</span></div>
+    <button class="ib" onclick="cpD(${d.id})">📋</button></div>
+    <h2 class="c-tit" style="font-size:24px">${esc(d.title)}</h2>
+    <div class="ar-box" style="padding:28px 20px"><div class="ar-txt" style="font-size:35px">${esc(d.arabic)}</div></div>
+    ${d.transliteration?`<div class="tl-box" style="font-size:15.5px">${esc(d.transliteration)}</div>`:''}
+    <div class="tr-box" style="font-size:16px">${esc(d.translation)}</div>
+    <div class="c-bot">
+      ${d.reference?`<div class="c-ref">📖 ${esc(d.reference)}</div>`:''}
+      ${d.context?`<div class="c-ctx">${esc(d.context)}</div>`:''}
+    </div>
+  </article>`;
+}
+
+function dlHtml(){
+  const fullHtml=document.documentElement.outerHTML;
+  const updated=fullHtml.replace(/const DEFAULT_DUAS = \[[\s\S]*?\];/, 'const DEFAULT_DUAS = '+JSON.stringify(duas)+';');
+  const b=new Blob([updated],{type:'text/html;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='index.html';a.click();
+  toast('Downloaded complete website file');
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
+
+init();
+</script>
+</body>
+</html>
